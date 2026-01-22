@@ -6,45 +6,52 @@
   <title>Formulir Kontak</title>
 
   <style>
-    body {
+    /* Reset & body */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      overflow: hidden;
       font-family: Arial, sans-serif;
       background: #eef3f8;
-      padding: 20px;
     }
 
+    /* Form wrapper */
     #myForm {
       background-color: #ffffff;
-      padding: 20px;
+      padding: 12px;
       border-radius: 10px;
       max-width: 400px;
-      margin: auto;
+      margin: 10px auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
+    /* Input & textarea */
     input, textarea {
       width: 100%;
       padding: 8px;
-      margin-top: 5px;
+      margin-top: 6px;
       border-radius: 5px;
       border: 1px solid #ccc;
       box-sizing: border-box;
+      font-size: 14px;
     }
 
+    textarea {
+      height: 60px;
+      resize: none;
+    }
+
+    /* Button */
     button {
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px;
       width: 100%;
       background-color: #1e90ff;
       color: white;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 15px;
       cursor: pointer;
     }
 
@@ -52,34 +59,25 @@
       background-color: #0b65c2;
     }
 
-    textarea {
-  resize: vertical;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  #myForm {
-    padding: 15px;
-  }
-}
-
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      #myForm {
+        padding: 10px;
+        margin: 5px auto;
+      }
+      input, textarea, button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <form id="myForm">
-    <label>Nama</label>
-    <input type="text" name="nama" required>
-
-    <label>Email</label>
-    <input type="email" name="email" required>
-
-    <label>Pesan</label>
-    <textarea name="pesan" rows="3" required></textarea>
-
+    <input type="text" name="nama" placeholder="Nama" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="pesan" placeholder="Pesan" required></textarea>
     <button type="submit">Kirim</button>
   </form>
 
@@ -107,4 +105,3 @@
 
 </body>
 </html>
-
