@@ -1,113 +1,99 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulir Kontak</title>
+<form id="myForm">
+  <h2>Formulir Kontak</h2>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #eef3f8;
-      height: 100vh;
-      overflow: hidden; /* hilangkan scroll */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  <label>Nama</label>
+  <input type="text" name="nama" placeholder="Nama" required>
 
-    #myForm {
-      background-color: #ffffff;
-      padding: 12px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  <label>Email</label>
+  <input type="email" name="email" placeholder="Email" required>
 
-    h2 {
-      text-align: center;
-      margin-bottom: 12px;
-    }
+  <label>Pesan</label>
+  <textarea name="pesan" placeholder="Pesan" required></textarea>
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      margin-top: 8px;
-      margin-bottom: 4px;
-    }
+  <button type="submit">Kirim</button>
+</form>
 
-    input, textarea {
-      width: 100%;
-      padding: 6px;
-      font-size: 14px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #eef3f8;
+  overflow: hidden;
+}
 
-    textarea {
-      height: 50px;
-      resize: none;
-    }
+#myForm {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 10px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-    button {
-      margin-top: 10px;
-      padding: 8px;
-      width: 100%;
-      background-color: #1e90ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      cursor: pointer;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
 
-    button:hover {
-      background-color: #0b65c2;
-    }
-  </style>
-</head>
-<body>
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  color: #333;
+}
 
-  <form id="myForm">
-    
-    <label>Nama</label>
-    <input type="text" name="nama" placeholder="Nama" required>
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-    <label>Email</label>
-    <input type="email" name="email" placeholder="Email" required>
+textarea {
+  height: 80px;
+  resize: none;
+}
 
-    <label>Pesan</label>
-    <textarea name="pesan" placeholder="Pesan" required></textarea>
+button {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    <button type="submit">Kirim</button>
-  </form>
+button:hover {
+  background-color: #0b65c2;
+}
 
-  <script>
-    const form = document.getElementById('myForm');
+/* Media Query untuk HP */
+@media (max-width: 600px) {
+  input, textarea {
+    padding: 6px;
+    font-size: 14px;
+  }
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+  textarea {
+    height: 50px;
+  }
 
-      const data = new FormData(form);
+  #myForm {
+    padding: 10px;
+    margin: 5px auto;
+  }
 
-      fetch("https://script.google.com/macros/s/AKfycbymRppJIovPPL_YzRFgNwgvcYlxD82fu13QZpW8i1Rn-j6stW5Im4vA_St0rA_niP9HDA/exec", {
-        method: "POST",
-        body: data
-      })
-      .then(() => {
-        alert("Data berhasil dikirim!");
-        form.reset();
-      })
-      .catch(() => {
-        alert("Gagal mengirim data, coba lagi!");
-      });
-    });
-  </script>
-
-</body>
-</html>
+  h2 {
+    font-size: 18px;
+  }
+}
+</style>
