@@ -10,8 +10,8 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: auto;
-      overflow: hidden;
+      height: 100%;
+      overflow: auto;
       font-family: Arial, sans-serif;
       background: #eef3f8;
     }
@@ -19,7 +19,7 @@
     /* Form wrapper */
     #myForm {
       background-color: #ffffff;
-      padding: 12px;
+      padding: 10px;
       border-radius: 10px;
       max-width: 400px;
       margin: 10px auto;
@@ -29,8 +29,8 @@
     /* Input & textarea */
     input, textarea {
       width: 100%;
-      padding: 8px;
-      margin-top: 6px;
+      padding: 6px;
+      margin-top: 5px;
       border-radius: 5px;
       border: 1px solid #ccc;
       box-sizing: border-box;
@@ -38,20 +38,29 @@
     }
 
     textarea {
-      height: 60px;
+      height: 50px;
       resize: none;
     }
 
-    /* Button */
+    /* Label kecil di atas input */
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    /* Tombol */
     button {
       margin-top: 10px;
-      padding: 10px;
+      padding: 8px;
       width: 100%;
       background-color: #1e90ff;
       color: white;
       border: none;
       border-radius: 5px;
-      font-size: 15px;
+      font-size: 14px;
       cursor: pointer;
     }
 
@@ -62,12 +71,12 @@
     /* Mobile adjustments */
     @media (max-width: 600px) {
       #myForm {
-        padding: 10px;
+        padding: 8px;
         margin: 5px auto;
       }
       input, textarea, button {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 13px;
+        padding: 6px;
       }
     }
   </style>
@@ -75,25 +84,25 @@
 <body>
   
   <!-- Judul besar form -->
-  <h2 style="text-align:center; margin-bottom:20px;">Formulir Kontak</h2>
+  <h2 style="text-align:center; margin-bottom:15px;">Formulir Kontak</h2>
 
   <!-- Form kontak -->
   <form id="myForm">
     
     <!-- Nama -->
-    <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:5px;">Nama</label>
+    <label>Nama</label>
     <input type="text" name="nama" placeholder="Nama" required>
     
     <!-- Email -->
-    <label style="font-size:14px; font-weight:bold; display:block; margin-top:10px; margin-bottom:5px;">Email</label>
+    <label>Email</label>
     <input type="email" name="email" placeholder="Email" required>
     
     <!-- Pesan -->
-    <label style="font-size:14px; font-weight:bold; display:block; margin-top:10px; margin-bottom:5px;">Pesan</label>
+    <label>Pesan</label>
     <textarea name="pesan" placeholder="Pesan" required></textarea>
     
     <!-- Tombol -->
-    <button type="submit" style="margin-top:15px;">Kirim</button>
+    <button type="submit">Kirim</button>
   </form>
 
   <script>
@@ -120,5 +129,3 @@
 
 </body>
 </html>
-
-
