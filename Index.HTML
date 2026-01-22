@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Kontak</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f8;
+      padding: 20px;
+    }
+
+    #myForm {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0b65c2;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <label>Nama</label>
+    <input type="text" name="nama" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Pesan</label>
+    <textarea name="pesan" required></textarea>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbyy2ush2n2nvyu9u6IdAJX4Od3cl947DLoZTGBRR_q183kD1eHjfaA51dARJsmoa18nUQ/exec", {
+        method: "POST",
+        body: data
+      })
+      .then(() => {
+        alert("Data berhasil dikirim!");
+        form.reset();
+      })
+      .catch(() => {
+        alert("Gagal mengirim data");
+      });
+    });
+  </script>
+
+</body>
+</html>
