@@ -72,11 +72,11 @@
     const form = document.getElementById('myForm');
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      e.preventDefault(); // cegah reload halaman
 
       const data = new FormData(form);
 
-      fetch("https://script.google.com/macros/s/AKfycbyy2ush2n2nvyu9u6IdAJX4Od3cl947DLoZTGBRR_q183kD1eHjfaA51dARJsmoa18nUQ/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbymRppJIovPPL_YzRFgNwgvcYlxD82fu13QZpW8i1Rn-j6stW5Im4vA_St0rA_niP9HDA/exec", {
         method: "POST",
         body: data
       })
@@ -85,7 +85,7 @@
         form.reset();
       })
       .catch(() => {
-        alert("Gagal mengirim data");
+        alert("Gagal mengirim data, coba lagi!");
       });
     });
   </script>
