@@ -51,6 +51,21 @@
     button:hover {
       background-color: #0b65c2;
     }
+
+    textarea {
+  resize: vertical;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  #myForm {
+    padding: 15px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -63,7 +78,7 @@
     <input type="email" name="email" required>
 
     <label>Pesan</label>
-    <textarea name="pesan" required></textarea>
+    <textarea name="pesan" rows="3" required></textarea>
 
     <button type="submit">Kirim</button>
   </form>
@@ -92,3 +107,4 @@
 
 </body>
 </html>
+
