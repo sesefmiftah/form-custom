@@ -74,21 +74,26 @@
 </head>
 <body>
   
-<form id="myForm">
-  <h2 style="text-align:center; margin-bottom:10px;">Formulir Kontak</h2>
-  
-  <input type="text" name="nama" placeholder="Nama" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="pesan" placeholder="Pesan" required></textarea>
-  
-  <button type="submit">Kirim</button>
-</form>
+  <!-- Judul besar form -->
+  <h2 style="text-align:center; margin-bottom:20px;">Formulir Kontak</h2>
 
+  <!-- Form kontak -->
   <form id="myForm">
+    
+    <!-- Nama -->
+    <label style="font-size:14px; font-weight:bold; display:block; margin-bottom:5px;">Nama</label>
     <input type="text" name="nama" placeholder="Nama" required>
+    
+    <!-- Email -->
+    <label style="font-size:14px; font-weight:bold; display:block; margin-top:10px; margin-bottom:5px;">Email</label>
     <input type="email" name="email" placeholder="Email" required>
+    
+    <!-- Pesan -->
+    <label style="font-size:14px; font-weight:bold; display:block; margin-top:10px; margin-bottom:5px;">Pesan</label>
     <textarea name="pesan" placeholder="Pesan" required></textarea>
-    <button type="submit">Kirim</button>
+    
+    <!-- Tombol -->
+    <button type="submit" style="margin-top:15px;">Kirim</button>
   </form>
 
   <script>
@@ -115,4 +120,5 @@
 
 </body>
 </html>
+
 
